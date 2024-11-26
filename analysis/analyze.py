@@ -1,8 +1,6 @@
-//analyze.py
-
 import matplotlib.pyplot as plt
 
-# µ¥ÀÌÅÍ ÀĞ±â
+# ë°ì´í„° ì½ê¸°
 results = {}
 current_size = None
 
@@ -18,11 +16,11 @@ with open("data/results.txt", "r") as file:
                 results[algorithm] = []
             results[algorithm].append((current_size, time))
 
-# µ¥ÀÌÅÍ¼Â Å©±âº°·Î Á¤·Ä
+# ë°ì´í„°ì…‹ í¬ê¸°ë³„ë¡œ ì •ë ¬
 for algorithm in results:
     results[algorithm].sort(key=lambda x: x[0])
 
-# ±×·¡ÇÁ »ı¼º
+# ê·¸ë˜í”„ ìƒì„±
 for algorithm, data in results.items():
     sizes, times = zip(*data)
     plt.plot(sizes, times, label=algorithm)
